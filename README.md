@@ -1,0 +1,2 @@
+# VerticalScrollingShootingGameIn2018_12
+縦スクロールシューティングゲームを作る
