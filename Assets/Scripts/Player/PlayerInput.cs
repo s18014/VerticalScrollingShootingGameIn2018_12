@@ -3,19 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour {
-    private enum equipType {
-        NarrowShooter,
-        WideShooter,
-        Bomb
-    }
     private PlayerMover playerMover;
-    private List<Transform> equips = new List<Transform>();
+    private PlayerEquipsManager equipsManager;
 
     private void Awake() {
         playerMover = GetComponent<PlayerMover>();
-        foreach (Transform child in transform.Find("PlayerEquips").transform) {
-            equips.Add(child);
-        }
+        equipsManager = transform.Find("PlayerEquips").GetComponent<PlayerEquipsManager>();
     }
 
     // Use this for initialization
@@ -29,7 +22,7 @@ public class PlayerInput : MonoBehaviour {
     }
 
     void Move() {
-        Vector2 dir = new Vector2(0, 0);
+        Vector2 dir = Vector2.zero;
         if (Input.GetKey(KeyCode.UpArrow)) {
             dir += Vector2.up;
         }
@@ -45,9 +38,19 @@ public class PlayerInput : MonoBehaviour {
         playerMover.Move(dir.normalized);
     }
 
-    void shot () {
+    void shot() {
+        if (Input.GetKey(KeyCode.F)) {
+            equipsManager.WideShot();
+        }
         if (Input.GetKey(KeyCode.Space)) {
-            equips[(int)equipType.NarrowShooter].GetComponent<IShotable>().shot();
+            equipsManager.NarrowShot();
+        }
+    }
+
+        void test () {
+        if (Input.GetKey(KeyCode.F)) {
+            equipsManager.LevelUpdate(1);
+            Debug.Log(1);
         }
     }
 

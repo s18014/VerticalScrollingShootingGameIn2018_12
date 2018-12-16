@@ -7,7 +7,7 @@ public class PlayerMover : MonoBehaviour {
     private Vector2 max;
     private Vector2 size;
     private Rigidbody2D rigidbody2d;
-    [SerializeField] float speed = 1;
+    [SerializeField] float speed = 1f;
 
     // Use this for initialization
 
@@ -29,18 +29,18 @@ public class PlayerMover : MonoBehaviour {
     void RestrictMovement () {
         // 画面外に行かないようにする処理
         Vector2 pos = transform.position;
-        if (pos.y < min.y + size.y / 2) {
-            pos.y = min.y + size.y / 2;
+        if (pos.y < min.y + size.y / 2f) {
+            pos.y = min.y + size.y / 2f;
         }
-        if (pos.y > max.y - size.y / 2) {
-            pos.y = max.y - size.y / 2;
+        if (pos.y > max.y - size.y / 2f) {
+            pos.y = max.y - size.y / 2f;
         }
 
-        if (pos.x < min.x + size.x / 2) {
-            pos.x = min.x + size.x / 2;
+        if (pos.x < min.x + size.x / 2f) {
+            pos.x = min.x + size.x / 2f;
         }
-        if (pos.x > max.x - size.x / 2) {
-            pos.x = max.x - size.x / 2;
+        if (pos.x > max.x - size.x / 2f) {
+            pos.x = max.x - size.x / 2f;
         }
         transform.position = pos;
     }
