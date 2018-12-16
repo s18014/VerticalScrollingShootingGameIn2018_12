@@ -2,29 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerMover : MonoBehaviour {
     private Vector2 min;
     private Vector2 max;
     private Vector2 size;
+    private Rigidbody2D rigidbody2d;
     [SerializeField] float speed = 1;
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+
+    private void Awake() {
         // 画面左下端と右上端を取得
         min = Camera.main.ViewportToWorldPoint(Vector2.zero);
         max = Camera.main.ViewportToWorldPoint(Vector2.one);
         size = GetComponent<SpriteRenderer>().size;
-        Debug.Log(size);
-        Debug.Log(min);
-        Debug.Log(max);
+        rigidbody2d = GetComponent<Rigidbody2D>();
+    }
+
+    void Start () {
     }
 
     // Update is called once per frame
     void Update () {
-        Control();
-        RestrictMovement();
 	}
 
     void RestrictMovement () {
+        // 画面外に行かないようにする処理
         Vector2 pos = transform.position;
         if (pos.y < min.y + size.y / 2) {
             pos.y = min.y + size.y / 2;
@@ -42,25 +45,9 @@ public class PlayerController : MonoBehaviour {
         transform.position = pos;
     }
 
-    void Control () {
-        Vector2 dir = new Vector2(0, 0);
-        if (Input.GetKey(KeyCode.UpArrow)) {
-            dir += Vector2.up;
-        }
-        if (Input.GetKey(KeyCode.DownArrow)) {
-            dir += Vector2.down;
-        }
-        if (Input.GetKey(KeyCode.RightArrow)) {
-            dir += Vector2.right;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow)) {
-            dir += Vector2.left;
-        }
-        Debug.Log(dir.normalized);
-        Move(dir.normalized);
-    }
-
-    void Move (Vector2 direction) {
-        transform.Translate(direction * speed * Time.deltaTime);
+   
+    public void Move (Vector2 direction) {
+        rigidbody2d.velocity = direction * speed;
+        RestrictMovement();
     }
 }
