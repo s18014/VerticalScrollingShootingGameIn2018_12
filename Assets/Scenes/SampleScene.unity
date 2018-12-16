@@ -1124,6 +1124,54 @@ Transform:
   m_Father: {fileID: 175361384}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &854098921
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4503042794754632, guid: c731339273efc4b6fae63eeb16952212, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.0031155
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503042794754632, guid: c731339273efc4b6fae63eeb16952212, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.3336775
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503042794754632, guid: c731339273efc4b6fae63eeb16952212, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503042794754632, guid: c731339273efc4b6fae63eeb16952212, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503042794754632, guid: c731339273efc4b6fae63eeb16952212, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503042794754632, guid: c731339273efc4b6fae63eeb16952212, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503042794754632, guid: c731339273efc4b6fae63eeb16952212, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503042794754632, guid: c731339273efc4b6fae63eeb16952212, type: 2}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 212561873318486642, guid: c731339273efc4b6fae63eeb16952212,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2002f89e9947d406ea22bf2c39c9192f,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c731339273efc4b6fae63eeb16952212, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1180414263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1941,8 +1989,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dbbd85b973544d0da0e4aca985a3000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greenBulletPrefab: {fileID: 1241201621778490, guid: 9befc4ca3503b4978a80728a84ad1ba9,
+  wideBulletPrefab: {fileID: 1652144128883844, guid: c731339273efc4b6fae63eeb16952212,
     type: 2}
   speed: 30
-  delayTime: 0.01
-  nWay: 3
+  delayTime: 0.07
+  nWay: 4
