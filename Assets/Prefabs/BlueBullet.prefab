@@ -111,6 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0cee123e459943309fbbdeb268935a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SparkPrefab: {fileID: 1140487524247876, guid: 9155d05bbe3de4d2b82e1cad23c82bc3,
+    type: 2}
 --- !u!212 &212426007367854892
 SpriteRenderer:
   m_ObjectHideFlags: 1
