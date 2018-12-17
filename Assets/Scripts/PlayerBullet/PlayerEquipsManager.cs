@@ -12,7 +12,6 @@ public class PlayerEquipsManager : MonoBehaviour {
 
     private void Awake() {
         foreach (Transform child in transform) {
-            Debug.Log(child.name);
             weapons.Add(child);
         }
     }
@@ -29,6 +28,7 @@ public class PlayerEquipsManager : MonoBehaviour {
 
     public void LevelUpdate (int newLevel) {
         weapons[(int)equipType.NarrowShooter].GetComponent<PlayerNarrowShooterManager>().setLevel(newLevel);
+        weapons[(int)equipType.WideShooter].GetComponent<PlayerWideShooterManager>().setLevel(newLevel);
     }
 
     public void NarrowShot () {
