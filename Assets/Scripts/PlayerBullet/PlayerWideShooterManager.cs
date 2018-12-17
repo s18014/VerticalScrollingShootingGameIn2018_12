@@ -21,7 +21,7 @@ public class PlayerWideShooterManager : MonoBehaviour, IShotable {
     void Update() {
     }
 
-    public void setLevel(int newLevel) {
+    public void setLevel (int newLevel) {
         if (newLevel < 0) newLevel = 0;
         if (newLevel > 2) newLevel = 2;
         level = newLevel;
@@ -30,4 +30,5 @@ public class PlayerWideShooterManager : MonoBehaviour, IShotable {
     public void shot() {
         shooters[level].GetComponent<IShotable>().shot();
     }
+
 }
