@@ -24,9 +24,11 @@ GameObject:
   - component: {fileID: 61674356561543452}
   - component: {fileID: 114986002576980054}
   - component: {fileID: 114574010299357340}
-  m_Layer: 0
+  - component: {fileID: 114591323764421554}
+  - component: {fileID: 114390185505304860}
+  m_Layer: 11
   m_Name: TineBullet
-  m_TagString: Untagged
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,6 +91,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.12, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &114390185505304860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1652144128883844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead9be7c5f4244303967ded197412e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114574010299357340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,6 +115,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SparkPrefab: {fileID: 1140487524247876, guid: 9155d05bbe3de4d2b82e1cad23c82bc3,
     type: 2}
+--- !u!114 &114591323764421554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1652144128883844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd50379a7130d4bc9a07ee52b0c59f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 1
 --- !u!114 &114986002576980054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,8 +170,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 413714723
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2002f89e9947d406ea22bf2c39c9192f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

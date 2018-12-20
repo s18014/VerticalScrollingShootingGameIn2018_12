@@ -3,17 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerEquipsManager : MonoBehaviour {
-    private enum equipType {
-        NarrowShooter,
-        WideShooter,
-        Bomb
-    }
-    private List<Transform> weapons = new List<Transform>();
+    private PlayerNarrowShooterManager PNSM;
+    private PlayerWideShooterManager PWSM;
 
     private void Awake() {
-        foreach (Transform child in transform) {
-            weapons.Add(child);
-        }
+        PNSM = transform.Find("PlayerNarrowShooterManager").GetComponent<PlayerNarrowShooterManager>();
+        PWSM = transform.Find("PlayerWideShooterManager").GetComponent<PlayerWideShooterManager>();
     }
 
     // Use this for initialization
@@ -26,17 +21,12 @@ public class PlayerEquipsManager : MonoBehaviour {
 		
 	}
 
-    public void LevelUpdate (int newLevel) {
-        weapons[(int)equipType.NarrowShooter].GetComponent<PlayerNarrowShooterManager>().setLevel(newLevel);
-        weapons[(int)equipType.WideShooter].GetComponent<PlayerWideShooterManager>().setLevel(newLevel);
+    public void NarrowShot (int level) {
+        PNSM.shot(level);
     }
 
-    public void NarrowShot () {
-        weapons[(int)equipType.NarrowShooter].GetComponent<IShotable>().shot();
-    }
-
-    public void WideShot () {
-        weapons[(int)equipType.WideShooter].GetComponent<IShotable>().shot();
+    public void WideShot (int level) {
+        PWSM.shot(level);
     }
 
 }

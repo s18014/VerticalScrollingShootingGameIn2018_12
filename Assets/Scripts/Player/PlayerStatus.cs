@@ -3,15 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour {
-    private int power = 0;
+    [SerializeField] int weponLevel = 0;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public int GetWeponLevel () {
+        return weponLevel;
+    }
 }

@@ -11,21 +11,20 @@ public class PlayerWideShooter : MonoBehaviour, IShotable {
     private Vector2 prefabSize;
     private float exTime = 0f;
 
-    private void Awake() {
+    private void Awake () {
         playerSize = GameObject.FindWithTag("Player").GetComponent<SpriteRenderer>().size;
         prefabSize = wideBulletPrefab.GetComponent<SpriteRenderer>().size;
     }
 
     // Use this for initialization
-    void Start() {
+    void Start () {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update () {
 
     }
-
-    public void shot() {
+    public void shot () {
         if (!isShotable()) return;
         for (int i = 0; i < nWay; i++) {
             var offset = Mathf.Floor(nWay / 2f);
@@ -36,12 +35,12 @@ public class PlayerWideShooter : MonoBehaviour, IShotable {
             pos.x += (i - offset) * prefabSize.x / 2f;
             GameObject bullet = Instantiate(wideBulletPrefab, pos, Quaternion.Euler(angle));
             BulletMover mover = bullet.GetComponent<BulletMover>();
-            mover.set(speed, 0f);
+            mover.set(speed);
             mover.SimpleMove(Quaternion.Euler(angle) * Vector2.up);
         }
     }
 
-    private bool isShotable() {
+    private bool isShotable () {
         if (Time.time - exTime > delayTime) {
             exTime = Time.time;
             return true;

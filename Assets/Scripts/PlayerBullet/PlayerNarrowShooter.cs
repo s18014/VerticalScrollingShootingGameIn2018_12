@@ -11,7 +11,7 @@ public class PlayerNarrowShooter : MonoBehaviour, IShotable {
     private Vector2 prefabSize;
     private float exTime = 0f;
 
-    private void Awake() {
+    private void Awake () {
         playerSize = GameObject.FindWithTag("Player").GetComponent<SpriteRenderer>().size;
         prefabSize = greenBulletPrefab.GetComponent<SpriteRenderer>().size;
     }
@@ -35,7 +35,7 @@ public class PlayerNarrowShooter : MonoBehaviour, IShotable {
             pos.x += (i - offset) * prefabSize.x / 1.5f;
             GameObject bullet = Instantiate(greenBulletPrefab, pos , Quaternion.Euler(0, 0, 0));
             BulletMover mover = bullet.GetComponent<BulletMover>();
-            mover.set(speed, 0f);
+            mover.set(speed);
             mover.SimpleMove(Vector2.up);
         }
     }

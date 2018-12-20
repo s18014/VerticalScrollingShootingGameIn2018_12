@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerNarrowShooterManager : MonoBehaviour, IShotable {
-    private int level = 0;
+public class PlayerNarrowShooterManager : MonoBehaviour {
     private List<Transform> shooters = new List<Transform>();
 
     private void Awake() {
@@ -21,13 +20,9 @@ public class PlayerNarrowShooterManager : MonoBehaviour, IShotable {
 	void Update () {
 	}
 
-    public void setLevel (int newLevel) {
-        if (newLevel < 0) newLevel = 0;
-        if (newLevel > 2) newLevel = 2;
-        level = newLevel;
-    }
-
-    public void shot () {
+    public void shot (int level) {
+        if (level < 0) level = 0;
+        if (level >= shooters.Count) level = shooters.Count - 1;
         shooters[level].GetComponent<IShotable>().shot();
     }
 }

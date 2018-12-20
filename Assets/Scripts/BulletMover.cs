@@ -4,19 +4,12 @@ using UnityEngine;
 
 public class BulletMover : MonoBehaviour {
     private Rigidbody2D rigidbody2d;
-    private Vector2 min;
-    private Vector2 max;
-    private Vector2 size;
     private float speed = 0f;
     private float acceleration = 0f;
     private Vector2 direction = Vector2.zero;
 
-    private void Awake() {
-        // 画面左下端と右上端を取得
-        min = Camera.main.ViewportToWorldPoint(Vector2.zero);
-        max = Camera.main.ViewportToWorldPoint(Vector2.one);
+    private void Awake () {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        size = GetComponent<SpriteRenderer>().size;
     }
 
     // Use this for initialization
@@ -25,28 +18,12 @@ public class BulletMover : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        IsOutOfRange();
         calcVelocity();
 	}
 
-    void IsOutOfRange () {
-        // 規定の範囲外かチェッ
-        Vector2 pos = transform.position;
-        if (pos.y < min.y - size.y / 2f ||
-            pos.y > max.y + size.y / 2f ||
-            pos.x < min.x - size.x / 2f ||
-            pos.x > max.x + size.x / 2f
-            ) {
-            Destroy(gameObject);
-        }
-    }
-
     // 初期化関数
-    public void set (float speed, float range) {
+    public void set (float speed) {
         this.speed = speed;
-        // Destroy Area を拡大
-        min = new Vector2(min.x - range, min.y - range);
-        max = new Vector2(max.x + range, max.y + range);
     }
 
     private void calcVelocity () {

@@ -11,7 +11,7 @@ public class DebugShooter : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        bulletMover.set(10f, 10f);
+        bulletMover.set(10f);
     }
 
     // Update is called once per frame

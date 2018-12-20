@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour {
     private PlayerMover playerMover;
     private PlayerEquipsManager equipsManager;
+    private PlayerStatus playerStatus;
 
     private void Awake() {
         playerMover = GetComponent<PlayerMover>();
         equipsManager = transform.Find("PlayerEquips").GetComponent<PlayerEquipsManager>();
+        playerStatus = GetComponent<PlayerStatus>();
     }
 
     // Use this for initialization
@@ -40,17 +42,10 @@ public class PlayerInput : MonoBehaviour {
 
     void shot() {
         if (Input.GetKey(KeyCode.F)) {
-            equipsManager.WideShot();
+            equipsManager.WideShot(playerStatus.GetWeponLevel());
         }
         if (Input.GetKey(KeyCode.Space)) {
-            equipsManager.NarrowShot();
-        }
-    }
-
-        void test () {
-        if (Input.GetKey(KeyCode.F)) {
-            equipsManager.LevelUpdate(1);
-            Debug.Log(1);
+            equipsManager.NarrowShot(playerStatus.GetWeponLevel());
         }
     }
 
