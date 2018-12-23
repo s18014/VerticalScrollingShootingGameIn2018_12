@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAnimation : MonoBehaviour {
+public class EnemyCollisionAnime : MonoBehaviour {
     private SpriteRenderer SP;
 
     private void Awake () {
@@ -19,6 +19,12 @@ public class EnemyAnimation : MonoBehaviour {
 		
 	}
 
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.tag == "PlayerBullet") {
+            Flashing();
+        }
+    }
+
     public void Flashing () {
         StartCoroutine("IEFlashing");
     }
@@ -28,4 +34,5 @@ public class EnemyAnimation : MonoBehaviour {
         yield return new WaitForSeconds(0.1f);
         SP.color = new Color(255f, 255f, 255f);
     }
+
 }

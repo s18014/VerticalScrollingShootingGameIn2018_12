@@ -11,13 +11,12 @@ public class DebugShooter : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        bulletMover.set(10f);
     }
 
     // Update is called once per frame
     void Update () {
         if (Input.GetKey(KeyCode.Space)) {
-            bulletMover.AccelMove(Vector2.up, 10f);
+            bulletMover.AccelMove(Vector2.up, 10f, 10f);
         }
     }
 

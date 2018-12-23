@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMover : MonoBehaviour {
+public class EnemyMover : Mover {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void Start() {
+        SimpleMove(Vector2.down, 1f);
+    }
+
+    private void Update() {
+        CalcVelocity();
+    }
 }

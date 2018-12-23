@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerNarrowShooterManager : MonoBehaviour {
     private List<Transform> shooters = new List<Transform>();
 
-    private void Awake() {
+    private void Awake () {
         foreach (Transform t in transform) {
             shooters.Add(t);
         }

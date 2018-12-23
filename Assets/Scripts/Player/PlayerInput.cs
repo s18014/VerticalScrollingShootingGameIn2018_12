@@ -7,7 +7,7 @@ public class PlayerInput : MonoBehaviour {
     private PlayerEquipsManager equipsManager;
     private PlayerStatus playerStatus;
 
-    private void Awake() {
+    private void Awake () {
         playerMover = GetComponent<PlayerMover>();
         equipsManager = transform.Find("PlayerEquips").GetComponent<PlayerEquipsManager>();
         playerStatus = GetComponent<PlayerStatus>();
@@ -23,7 +23,7 @@ public class PlayerInput : MonoBehaviour {
         shot();
     }
 
-    void Move() {
+    void Move () {
         Vector2 dir = Vector2.zero;
         if (Input.GetKey(KeyCode.UpArrow)) {
             dir += Vector2.up;
@@ -40,7 +40,7 @@ public class PlayerInput : MonoBehaviour {
         playerMover.Move(dir.normalized);
     }
 
-    void shot() {
+    void shot () {
         if (Input.GetKey(KeyCode.F)) {
             equipsManager.WideShot(playerStatus.GetWeponLevel());
         }

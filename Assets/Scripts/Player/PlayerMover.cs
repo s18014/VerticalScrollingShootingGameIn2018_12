@@ -11,7 +11,7 @@ public class PlayerMover : MonoBehaviour {
 
     // Use this for initialization
 
-    private void Awake() {
+    private void Awake () {
         // 画面左下端と右上端を取得
         min = Camera.main.ViewportToWorldPoint(Vector2.zero);
         max = Camera.main.ViewportToWorldPoint(Vector2.one);

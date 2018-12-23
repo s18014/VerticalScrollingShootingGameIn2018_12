@@ -6,7 +6,7 @@ public class PlayerEquipsManager : MonoBehaviour {
     private PlayerNarrowShooterManager PNSM;
     private PlayerWideShooterManager PWSM;
 
-    private void Awake() {
+    private void Awake () {
         PNSM = transform.Find("PlayerNarrowShooterManager").GetComponent<PlayerNarrowShooterManager>();
         PWSM = transform.Find("PlayerWideShooterManager").GetComponent<PlayerWideShooterManager>();
     }

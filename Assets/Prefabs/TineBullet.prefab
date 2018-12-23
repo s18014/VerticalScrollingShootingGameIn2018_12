@@ -22,10 +22,10 @@ GameObject:
   - component: {fileID: 212561873318486642}
   - component: {fileID: 50910322201456290}
   - component: {fileID: 61674356561543452}
-  - component: {fileID: 114986002576980054}
   - component: {fileID: 114574010299357340}
   - component: {fileID: 114591323764421554}
   - component: {fileID: 114390185505304860}
+  - component: {fileID: 114465078839895566}
   m_Layer: 11
   m_Name: TineBullet
   m_TagString: PlayerBullet
@@ -102,6 +102,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ead9be7c5f4244303967ded197412e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114465078839895566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1652144128883844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1742c13de604a9284d7c9f9960dc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114574010299357340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,17 +138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 1
---- !u!114 &114986002576980054
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1652144128883844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676cda9e601db461eb350115f14052d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212561873318486642
 SpriteRenderer:
   m_ObjectHideFlags: 1
