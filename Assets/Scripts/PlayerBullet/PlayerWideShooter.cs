@@ -34,7 +34,7 @@ public class PlayerWideShooter : MonoBehaviour, IShotable {
             pos.y += playerSize.y - Mathf.Abs(i - offset) / 15f;
             pos.x += (i - offset) * prefabSize.x / 2f;
             GameObject bullet = Instantiate(wideBulletPrefab, pos, Quaternion.Euler(angle));
-            BulletMover mover = bullet.GetComponent<BulletMover>();
+            Mover mover = bullet.GetComponent<Mover>();
             mover.SimpleMove(Quaternion.Euler(angle) * Vector2.up, speed);
         }
     }

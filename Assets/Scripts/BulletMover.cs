@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletMover : Mover {
+public class BulletMover : MonoBehaviour {
 
     private void Start () {
     }
 
     private void Update () {
-        CalcVelocity();
     }
 }

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBulletDestroyer : MonoBehaviour {
-    [SerializeField] GameObject effectPrefab;
+public class PlayerBulletDestroyer : MonoBehaviour, IDestroyable {
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -16,7 +15,6 @@ public class EnemyBulletDestroyer : MonoBehaviour {
 	}
 
     public void DoDestroy () {
-        Instantiate(effectPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

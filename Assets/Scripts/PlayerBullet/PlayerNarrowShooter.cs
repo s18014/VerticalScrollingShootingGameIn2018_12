@@ -34,7 +34,7 @@ public class PlayerNarrowShooter : MonoBehaviour, IShotable {
             pos.y += playerSize.y - Mathf.Abs(i - offset) / 10f;
             pos.x += (i - offset) * prefabSize.x / 1.5f;
             GameObject bullet = Instantiate(greenBulletPrefab, pos , Quaternion.Euler(0, 0, 0));
-            BulletMover mover = bullet.GetComponent<BulletMover>();
+            Mover mover = bullet.GetComponent<Mover>();
             mover.SimpleMove(Vector2.up, speed);
         }
     }

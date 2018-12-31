@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyStatus : MonoBehaviour, IDamageable {
-    [SerializeField] float hp = 100;
+public class EnemyStatus : MonoBehaviour {
+    [SerializeField] float hp = 100f;
+    [SerializeField] int score = 500;
     [SerializeField] Vector2 size = Vector2.zero;
-    private EnemyDestroyer destroyer;
     private LineRenderer line;
 
     private void Awake () {
-        destroyer = GetComponent<EnemyDestroyer>();
         gameObject.AddComponent<LineRenderer>();
         line = GetComponent<LineRenderer>();
     }
@@ -27,6 +26,18 @@ public class EnemyStatus : MonoBehaviour, IDamageable {
         return size;
     }
 
+    public float GetHp () {
+        return hp;
+    }
+
+    public int GetScore () {
+        return score;
+    }
+
+    public void SetHp (float point) {
+        hp = point;
+    }
+
     public void TestShowSize () {
         line.startWidth = 0.05f;
         line.endWidth = 0.05f;
@@ -39,10 +50,4 @@ public class EnemyStatus : MonoBehaviour, IDamageable {
         line.SetPosition(4, pos - new Vector2(size.x / 2f, -size.y / 2f));
     }
 
-    public void ApplyDamage(float point) {
-        hp -= point;
-        if (hp < 0) {
-            destroyer.DoDestory();
-        }
-    }
 }

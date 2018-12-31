@@ -25,7 +25,9 @@ GameObject:
   - component: {fileID: 114225020843408238}
   - component: {fileID: 114724588410688050}
   - component: {fileID: 114248595024663730}
-  - component: {fileID: 114566172649809762}
+  - component: {fileID: 114634779312955728}
+  - component: {fileID: 114244743453355858}
+  - component: {fileID: 114147202056423712}
   m_Layer: 11
   m_Name: GreenBullet
   m_TagString: PlayerBullet
@@ -64,7 +66,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &61855563093542672
 BoxCollider2D:
@@ -91,6 +93,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.24, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &114147202056423712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134291226624528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676cda9e601db461eb350115f14052d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114225020843408238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,6 +116,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 1
+--- !u!114 &114244743453355858
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134291226624528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be29f3e30f5f94a3a9fd42ce303aef34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SparkPrefab: {fileID: 1140487524247876, guid: 9155d05bbe3de4d2b82e1cad23c82bc3,
+    type: 2}
 --- !u!114 &114248595024663730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,9 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0cee123e459943309fbbdeb268935a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SparkPrefab: {fileID: 1140487524247876, guid: 9155d05bbe3de4d2b82e1cad23c82bc3,
-    type: 2}
---- !u!114 &114566172649809762
+--- !u!114 &114634779312955728
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,7 +148,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1134291226624528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f1742c13de604a9284d7c9f9960dc58, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d0bda71917304737b1568baef01fd01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114724588410688050

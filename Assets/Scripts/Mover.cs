@@ -6,6 +6,7 @@ public class Mover : MonoBehaviour {
     private Rigidbody2D rigidbody2d;
     private float speed = 0f;
     private float acceleration = 0f;
+    private float angle = 0f;
     private Vector2 direction = Vector2.zero;
 
     private void Awake () {
@@ -21,9 +22,17 @@ public class Mover : MonoBehaviour {
         CalcVelocity();
     }
 
-    protected void CalcVelocity () {
+    private void CalcVelocity () {
+        direction = Quaternion.Euler(0f, 0f, angle * Time.deltaTime) * direction;
         speed += acceleration * Time.deltaTime;
         rigidbody2d.velocity = direction * speed;
+    }
+
+    public void Set (Vector2 dir, float speed, float accel, float angle) {
+        this.direction = dir;
+        this.speed = speed;
+        this.acceleration = accel;
+        this.angle = angle;
     }
 
     public void SimpleMove (Vector2 dir, float speed) {

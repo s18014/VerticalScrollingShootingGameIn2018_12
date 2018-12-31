@@ -6,7 +6,7 @@ public class PlayerMover : MonoBehaviour {
     private Vector2 min;
     private Vector2 max;
     private Vector2 size;
-    private Rigidbody2D rigidbody2d;
+    private Mover mover;
     [SerializeField] float speed = 1f;
 
     // Use this for initialization
@@ -16,7 +16,7 @@ public class PlayerMover : MonoBehaviour {
         min = Camera.main.ViewportToWorldPoint(Vector2.zero);
         max = Camera.main.ViewportToWorldPoint(Vector2.one);
         size = GetComponent<SpriteRenderer>().size;
-        rigidbody2d = GetComponent<Rigidbody2D>();
+        mover = GetComponent<Mover>();
     }
 
     void Start () {
@@ -47,7 +47,7 @@ public class PlayerMover : MonoBehaviour {
 
    
     public void Move (Vector2 direction) {
-        rigidbody2d.velocity = direction * speed;
+        mover.SimpleMove(direction, speed);
         RestrictMovement();
     }
 }

@@ -42,10 +42,10 @@ public class PlayerInput : MonoBehaviour {
 
     void shot () {
         if (Input.GetKey(KeyCode.F)) {
-            equipsManager.WideShot(playerStatus.GetWeponLevel());
+            equipsManager.WideShot(playerStatus.GetWeaponLevel());
         }
         if (Input.GetKey(KeyCode.Space)) {
-            equipsManager.NarrowShot(playerStatus.GetWeponLevel());
+            equipsManager.NarrowShot(playerStatus.GetWeaponLevel());
         }
     }
 

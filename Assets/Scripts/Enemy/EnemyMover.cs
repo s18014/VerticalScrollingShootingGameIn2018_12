@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMover : Mover {
+public class EnemyMover : MonoBehaviour {
 
-    private void Start() {
-        SimpleMove(Vector2.down, 1f);
+    private void Start () {
     }
 
-    private void Update() {
-        CalcVelocity();
+    private void Update () {
     }
 }
