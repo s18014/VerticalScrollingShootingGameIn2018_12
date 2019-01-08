@@ -424,7 +424,7 @@ MonoBehaviour:
   nWay: 1
   angleRange: 0
   firePerOnce: 18
-  interval: 0.05
+  interval: 0
   beginDelay: 0.5
   delay: 3
   times: -1
